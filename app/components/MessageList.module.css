@@ -1,18 +1,14 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    transition: opacity 0.2s;
-}
-
-.list[aria-busy="true"] {
-    opacity: 0.5;
-    pointer-events: none;
+    gap: 8px;
+    min-height: 0;
+    contain: layout style;
 }
 
 .empty {
-    color: #9ca3af;
+    color: var(--muted);
     font-size: 14px;
     text-align: center;
-    padding: 24px 0;
+    padding: 32px 0;
 }

@@ -1,40 +1,42 @@
 .item {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     padding: 12px 16px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #fff;
+    background: var(--background);
 }
 
 .content {
     margin: 0 0 4px;
     font-size: 15px;
-    color: #111;
+    color: var(--foreground);
 }
 
 .time {
     font-size: 12px;
-    color: #9ca3af;
+    color: var(--muted);
 }
 
 .deleteBtn {
     background: none;
     border: none;
     cursor: pointer;
-    color: #ef4444;
-    font-size: 14px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    transition: background 0.15s;
+    color: var(--danger);
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.15s;
 }
 
 .deleteBtn:hover:not(:disabled) {
-    background: #fee2e2;
+    opacity: 1;
 }
 
 .deleteBtn:disabled {
-    opacity: 0.3;
+    opacity: 0.25;
     cursor: not-allowed;
 }

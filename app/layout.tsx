@@ -1,4 +1,9 @@
-export const metadata = { title: 'Message Board' };
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+    title: 'Message Board',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (

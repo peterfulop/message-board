@@ -15,8 +15,8 @@ export function MessageList({ initialMessages }: { initialMessages: Message[] })
 
     function handleDelete(id: string) {
         startTransition(async () => {
-            removeOptimistic(id); // instant UI update
-            await deleteMessage(id); // confirm on server; revalidatePath syncs SSR cache
+            removeOptimistic(id);
+            await deleteMessage(id);
         });
     }
 

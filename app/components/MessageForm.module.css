@@ -1,37 +1,41 @@
 .form {
     display: flex;
     gap: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .input {
     flex: 1;
     padding: 8px 12px;
     font-size: 15px;
-    border: 1px solid #d1d5db;
+    font-family: inherit;
+    color: var(--foreground);
+    background: var(--background);
+    border: 1px solid var(--border);
     border-radius: 6px;
     transition: border-color 0.15s;
 }
 
 .input:focus {
     outline: none;
-    border-color: #111;
+    border-color: var(--foreground);
 }
 
 .input:disabled {
-    background: #f9fafb;
-    color: #9ca3af;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 64px;
+    min-width: 72px;
     padding: 8px 16px;
     font-size: 15px;
-    background: #111;
-    color: #fff;
+    font-family: inherit;
+    background: var(--foreground);
+    color: var(--background);
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -39,6 +43,6 @@
 }
 
 .button:disabled {
-    opacity: 0.4;
+    opacity: 0.35;
     cursor: not-allowed;
 }
