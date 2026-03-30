@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Message Board – Specification
 
-## Getting Started
+## Goal
 
-First, run the development server:
+Build a minimal web application where users can post, view, and delete messages.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The focus is on simplicity and completing the required functionality using AI-assisted development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Requirements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Hosting: Vercel (free tier)
+- Database: Supabase (free tier)
+- Version control: GitHub repository
+- Programming language: nextjs + typescript
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Functional Requirements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Create message
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- User can enter text into an input field
+- On submit, the message is stored in the database
 
-## Deploy on Vercel
+### 2. List messages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Display all stored messages
+- Order: newest first (descending by creation time)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. Delete message
+
+- Each message has a delete action
+- Clicking delete removes the message from the database
+
+---
+
+## Data Model
+
+A single table is sufficient:
+
+- id (unique identifier)
+- content (text)
+- created_at (timestamp)
+
+---
+
+## Constraints
+
+- No authentication required
+- No user management
+- All messages are public
+- Any message can be deleted
+
+---
+
+## Out of Scope
+
+- Authentication / authorization
+- Pagination
+- Editing messages
+- Advanced UI/UX
+- Rate limiting or production-grade security
+
+---
+
+## Deliverables
+
+- Public URL of the deployed application (Vercel)
+- GitHub repository with source code
+- AI usage log (separate file)
+
+---
+
+## Notes
+
+- Keep the implementation minimal and focused on requirements
+- Avoid overengineering
+- Prefer simple, clear solutions over complex ones
+
+# AI Logs
+
+## LOG SCHEMA
+
+## Step 1 – Project initialization
+
+**Goal:**
+...
+
+**Prompt:**
+...
+
+**Outcome:**
+
+- ...
+- ...
+
+**Decision:**
+...
