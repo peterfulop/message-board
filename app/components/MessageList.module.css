@@ -4,6 +4,9 @@
     gap: 8px;
     min-height: 0;
     contain: layout style;
+    max-height: 480px;
+    padding: 10px;
+    overflow: auto;
 }
 
 .empty {
