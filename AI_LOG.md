@@ -146,3 +146,7 @@ CSS @font-face preferred over next/font/local because localFont re-applies CSS v
 - Add authentication and ownership model
 - Introduce rate limiting
 - Improve error handling UX
+
+
+Claude shared link:
+https://claude.ai/share/04294646-e719-44e0-ac27-e4f95a4d1463
