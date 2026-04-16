@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabase';
 
 export async function createMessage(content: string): Promise<void> {
     if (!content.trim()) return;
-    const { error } = await supabase.from('messagess').insert({ content: content.trim() });
+    const { error } = await supabase.from('messages').insert({ content: content.trim() });
     if (error) throw new Error(error.message);
     revalidatePath('/');
 }
