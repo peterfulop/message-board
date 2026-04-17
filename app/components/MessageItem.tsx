@@ -17,7 +17,7 @@ export function MessageItem({ message, onDelete, disabled }: Props) {
                     dateTime={message.created_at}
                     suppressHydrationWarning
                 >
-                    {new Date(message.created_at).toLocaleString()}
+                    {new Date(message.created_at).toLocaleString('hu-HU')}
                 </time>
             </div>
             <button

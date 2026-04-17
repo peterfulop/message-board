@@ -1,37 +1,22 @@
 'use client';
 
-import { useOptimistic, useTransition } from 'react';
 import type { Message } from '@/lib/messages';
-import { deleteMessage } from '../actions';
 import { MessageItem } from './MessageItem';
 import styles from './MessageList.module.css';
 
-export function MessageList({ initialMessages }: { initialMessages: Message[] }) {
-    const [optimisticMessages, removeOptimistic] = useOptimistic(
-        initialMessages,
-        (current, idToRemove: string) => current.filter((m) => m.id !== idToRemove),
-    );
-    const [isPending, startTransition] = useTransition();
+type Props = {
+    messages: Message[];
+    onDelete: (id: string) => void;
+};
 
-    function handleDelete(id: string) {
-        startTransition(async () => {
-            removeOptimistic(id);
-            await deleteMessage(id);
-        });
-    }
-
+export function MessageList({ messages, onDelete }: Props) {
     return (
         <section className={styles.list}>
-            {optimisticMessages.length === 0 && (
+            {messages.length === 0 && (
                 <p className={styles.empty}>No messages yet. Be the first!</p>
             )}
-            {optimisticMessages.map((msg) => (
-                <MessageItem
-                    key={msg.id}
-                    message={msg}
-                    onDelete={handleDelete}
-                    disabled={isPending}
-                />
+            {messages.map((msg) => (
+                <MessageItem key={msg.id} message={msg} onDelete={onDelete} disabled={false} />
             ))}
         </section>
     );

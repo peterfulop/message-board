@@ -1,26 +1,25 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { useRouter } from 'next/navigation';
-import { createMessage } from '../actions';
 import { LoadingSpinner } from './LoadingSpinner';
 import styles from './MessageForm.module.css';
 
-export function MessageForm() {
+type Props = {
+    onSubmit: (content: string) => void;
+};
+
+export function MessageForm({ onSubmit }: Props) {
     const [content, setContent] = useState('');
     const [isPending, startTransition] = useTransition();
-    const router = useRouter();
 
     const isEmpty = content.trim().length === 0;
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         if (isEmpty) return;
-
-        startTransition(async () => {
-            await createMessage(content);
+        startTransition(() => {
+            onSubmit(content);
             setContent('');
-            router.refresh(); // re-runs the Server Component fetch, streams fresh list
         });
     }
 
